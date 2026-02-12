@@ -9,6 +9,9 @@ import { CategoryModule } from './category/category.module';
 import { GenderModule } from './gender/gender.module';
 import { ProductModule } from './product/product.module';
 import { BrandModule } from './brand/brand.module';
+import { ColorModule } from './color/color.module';
+import { ProductVariantModule } from './product-variant/product-variant.module';
+import { SizeModule } from './size/size.module';
 
 @Module({
   imports: [UserModule,
@@ -34,8 +37,11 @@ import { BrandModule } from './brand/brand.module';
     GenderModule,
     ProductModule,
     BrandModule,
+    ColorModule,
+    ProductVariantModule,
+    SizeModule,
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }

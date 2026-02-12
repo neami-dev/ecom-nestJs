@@ -17,22 +17,38 @@ export class ProductController {
   }
 
   @Get()
-  findAll() {
-    return this.productService.findAll();
+  async findAll() {
+    const products = await this.productService.findAll();
+    return {
+      message: "All products fetched successfully",
+      data: products
+    };
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.productService.findOne(+id);
+  async findOne(@Param('id') id: string) {
+    const product = await this.productService.findOne(+id);
+    return {
+      message: `Product with id ${id} fetched successfully`,
+      data: product
+    };
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateProductDto: UpdateProductDto) {
-    return this.productService.update(+id, updateProductDto);
+  async update(@Param('id') id: string, @Body() updateProductDto: UpdateProductDto) {
+    const product = await this.productService.update(+id, updateProductDto);
+    return {
+      message: `Product with id ${id} updated successfully`,
+      data: product
+    };
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.productService.remove(+id);
+  async remove(@Param('id') id: string) {
+    const product = await this.productService.remove(+id);
+    return {
+      message: `Product with id ${id} deleted successfully`,
+      data: product
+    };
   }
 }
