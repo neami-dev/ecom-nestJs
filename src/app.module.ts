@@ -12,6 +12,9 @@ import { BrandModule } from './brand/brand.module';
 import { ColorModule } from './color/color.module';
 import { ProductVariantModule } from './product-variant/product-variant.module';
 import { SizeModule } from './size/size.module';
+import { CollectionModule } from './collection/collection.module';
+import { ProductCollectionModule } from './product-collection/product-collection.module';
+import { ProductImageModule } from './product-image/product-image.module';
 
 @Module({
   imports: [UserModule,
@@ -40,6 +43,9 @@ import { SizeModule } from './size/size.module';
     ColorModule,
     ProductVariantModule,
     SizeModule,
+    CollectionModule,
+    ProductCollectionModule,
+    ProductImageModule,
   ],
   controllers: [AppController],
   providers: [AppService],

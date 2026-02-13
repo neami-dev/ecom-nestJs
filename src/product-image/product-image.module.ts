@@ -1,0 +1,14 @@
+import { Module } from '@nestjs/common';
+import { ProductImageService } from './product-image.service';
+import { ProductImageController } from './product-image.controller';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { ProductImage } from './entities/product-image.entity';
+import { Product } from 'src/product/entities/product.entity';
+import { ProductVariant } from 'src/product-variant/entities/product-variant.entity';
+
+@Module({
+    imports: [TypeOrmModule.forFeature([ProductImage, Product, ProductVariant])],
+    controllers: [ProductImageController],
+    providers: [ProductImageService],
+})
+export class ProductImageModule {}
